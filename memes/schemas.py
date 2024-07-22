@@ -12,8 +12,7 @@ class MemeCreate(MemeBase):
 
 
 class MemeUpdate(MemeBase):
-    text: str | None = None
-    img_url: str | None = None
+    pass
 
 
 class Meme(MemeBase):
