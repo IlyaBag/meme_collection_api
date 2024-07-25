@@ -9,5 +9,22 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
+  minio:
+    image: minio/minio:RELEASE.2024-07-16T23-46-41Z.fips
+    command: server --console-address ":9001" /data/
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    env_file:
+      - .env
+    volumes:
+      - minio-storage:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
 volumes:
   pgdata:
+  minio-storage:
