@@ -1,8 +1,10 @@
 from datetime import datetime
 from sqlalchemy import TIMESTAMP
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
-from db import Base
+
+class Base(DeclarativeBase):
+    pass
 
 
 class Meme(Base):
