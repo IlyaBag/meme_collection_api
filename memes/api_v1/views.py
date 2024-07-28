@@ -1,10 +1,8 @@
 from fastapi import APIRouter, Depends, status
 from sqlalchemy import Result, select
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.orm import Session
 
-from db import get_db_session
-from api_v1.dependencies import get_meme_by_id
+from api_v1.dependencies import get_db_session, get_meme_by_id
 from models import Meme
 import api_v1.schemas as schemas
 
