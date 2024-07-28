@@ -15,4 +15,4 @@ class Meme(Base):
     img_url: Mapped[str]
     created_at: Mapped[TIMESTAMP] = mapped_column(TIMESTAMP(timezone=True),
                                                   nullable=False,
-                                                  default=datetime.utcnow)
+                                                  default=datetime.now)
