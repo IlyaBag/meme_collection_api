@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 from db import get_db_session
 from api_v1.dependencies import get_meme_by_id
 from models import Meme
-import schemas
+import api_v1.schemas as schemas
 
 
 router = APIRouter(
